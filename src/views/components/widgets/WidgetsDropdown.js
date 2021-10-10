@@ -22,13 +22,14 @@ const WidgetsDropdown = () => {
           color="primary"
           value={
             <>
-              26K{' '}
-              <span className="fs-6 fw-normal">
+              1438{' '}
+              {/* <span className="fs-6 fw-normal">
                 (-12.4% <CIcon icon={cilArrowBottom} />)
-              </span>
+              </span> */}
             </>
           }
-          title="Users"
+          // title="Users"
+          title="Ingeniería"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -47,14 +48,14 @@ const WidgetsDropdown = () => {
               className="mt-3 mx-3"
               style={{ height: '70px' }}
               data={{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                 datasets: [
                   {
-                    label: 'My First dataset',
+                    label: 'Visitas',
                     backgroundColor: 'transparent',
                     borderColor: 'rgba(255,255,255,.55)',
                     pointBackgroundColor: getStyle('--cui-primary'),
-                    data: [65, 59, 84, 84, 51, 55, 40],
+                    data: [181, 225, 196, 231, 178, 206, 215],
                   },
                 ],
               }}
@@ -76,8 +77,8 @@ const WidgetsDropdown = () => {
                     },
                   },
                   y: {
-                    min: 30,
-                    max: 89,
+                    min: 0,
+                    max: 250,
                     display: false,
                     grid: {
                       display: false,
@@ -109,13 +110,13 @@ const WidgetsDropdown = () => {
           color="info"
           value={
             <>
-              $6.200{' '}
-              <span className="fs-6 fw-normal">
+              1873{' '}
+              {/* <span className="fs-6 fw-normal">
                 (40.9% <CIcon icon={cilArrowTop} />)
-              </span>
+              </span> */}
             </>
           }
-          title="Income"
+           title="Ciencias Sociales y Humanidades"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -134,14 +135,14 @@ const WidgetsDropdown = () => {
               className="mt-3 mx-3"
               style={{ height: '70px' }}
               data={{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                 datasets: [
                   {
-                    label: 'My First dataset',
+                    label: 'Visitas',
                     backgroundColor: 'transparent',
                     borderColor: 'rgba(255,255,255,.55)',
                     pointBackgroundColor: getStyle('--cui-info'),
-                    data: [1, 18, 9, 17, 34, 22, 11],
+                    data: [181, 174, 196, 225, 163, 213, 232],
                   },
                 ],
               }}
@@ -163,8 +164,8 @@ const WidgetsDropdown = () => {
                     },
                   },
                   y: {
-                    min: -9,
-                    max: 39,
+                    min: 0,
+                    max: 250,
                     display: false,
                     grid: {
                       display: false,
@@ -195,38 +196,38 @@ const WidgetsDropdown = () => {
           color="warning"
           value={
             <>
-              2.49{' '}
-              <span className="fs-6 fw-normal">
+              1152{' '}
+              {/* <span className="fs-6 fw-normal">
                 (84.7% <CIcon icon={cilArrowTop} />)
-              </span>
+              </span> */}
             </>
           }
-          title="Conversion Rate"
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Action</CDropdownItem>
-                <CDropdownItem>Another action</CDropdownItem>
-                <CDropdownItem>Something else here...</CDropdownItem>
-                <CDropdownItem disabled>Disabled action</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-          }
+          title="Administración"
+        //   action={
+        //     <CDropdown alignment="end">
+        //       <CDropdownToggle color="transparent" caret={false} className="p-0">
+        //         <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
+        //       </CDropdownToggle>
+        //       <CDropdownMenu>
+        //         <CDropdownItem>Action</CDropdownItem>
+        //         <CDropdownItem>Another action</CDropdownItem>
+        //         <CDropdownItem>Something else here...</CDropdownItem>
+        //         <CDropdownItem disabled>Disabled action</CDropdownItem>
+        //       </CDropdownMenu>
+        //     </CDropdown>
+        //   }
           chart={
             <CChartLine
               className="mt-3"
               style={{ height: '70px' }}
               data={{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                 datasets: [
                   {
-                    label: 'My First dataset',
+                    label: 'Visitas',
                     backgroundColor: 'rgba(255,255,255,.2)',
                     borderColor: 'rgba(255,255,255,.55)',
-                    data: [78, 81, 80, 45, 34, 12, 40],
+                    data: [181, 241, 196, 225, 163, 288, 232],
                     fill: true,
                   },
                 ],
@@ -268,13 +269,13 @@ const WidgetsDropdown = () => {
           color="danger"
           value={
             <>
-              44K{' '}
-              <span className="fs-6 fw-normal">
+              1496{' '}
+              {/* <span className="fs-6 fw-normal">
                 (-23.6% <CIcon icon={cilArrowBottom} />)
-              </span>
+              </span> */}
             </>
           }
-          title="Sessions"
+          title="Preparatoria"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -293,30 +294,13 @@ const WidgetsDropdown = () => {
               className="mt-3 mx-3"
               style={{ height: '70px' }}
               data={{
-                labels: [
-                  'January',
-                  'February',
-                  'March',
-                  'April',
-                  'May',
-                  'June',
-                  'July',
-                  'August',
-                  'September',
-                  'October',
-                  'November',
-                  'December',
-                  'January',
-                  'February',
-                  'March',
-                  'April',
-                ],
+                labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                 datasets: [
                   {
-                    label: 'My First dataset',
+                    label: 'Visitas',
                     backgroundColor: 'rgba(255,255,255,.2)',
                     borderColor: 'rgba(255,255,255,.55)',
-                    data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
+                    data: [181, 241, 196, 225, 163, 288, 232],
                     barPercentage: 0.6,
                   },
                 ],
