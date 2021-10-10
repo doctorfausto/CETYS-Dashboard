@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { CWidgetStatsD, CRow, CCol } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cibFacebook, cibLinkedin, cibTwitter, cilCalendar } from '@coreui/icons'
+import { cibFacebook, cibLinkedin, cilVoice, cilCalendar, cilUser} from '@coreui/icons'
 import { CChart } from '@coreui/react-chartjs'
 
 const WidgetsBrand = ({ withCharts }) => {
@@ -36,7 +36,7 @@ const WidgetsBrand = ({ withCharts }) => {
 
   return (
     <CRow>
-      <CCol sm={6} lg={3}>
+      {/* <CCol sm={6} lg={3}>
         <CWidgetStatsD
           className="mb-4"
           {...(withCharts && {
@@ -70,9 +70,9 @@ const WidgetsBrand = ({ withCharts }) => {
             '--cui-card-cap-bg': '#3b5998',
           }}
         />
-      </CCol>
+      </CCol> */}
 
-      <CCol sm={6} lg={3}>
+      <CCol sm={6} lg={6}>
         <CWidgetStatsD
           className="mb-4"
           {...(withCharts && {
@@ -81,14 +81,14 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                  labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
                   datasets: [
                     {
                       backgroundColor: 'rgba(255,255,255,.1)',
                       borderColor: 'rgba(255,255,255,.55)',
                       pointHoverBackgroundColor: '#fff',
                       borderWidth: 2,
-                      data: [1, 13, 9, 17, 34, 41, 38],
+                      data: [1, 4, 2, 6, 1, 2, 2],
                       fill: true,
                     },
                   ],
@@ -97,10 +97,9 @@ const WidgetsBrand = ({ withCharts }) => {
               />
             ),
           })}
-          icon={<CIcon icon={cibTwitter} height={52} className="my-4 text-white" />}
+          icon={<CIcon icon={cilVoice} height={52} className="my-4 text-white" />}
           values={[
-            { title: 'followers', value: '973k' },
-            { title: 'tweets', value: '1.792' },
+            { title: 'uso del semaforo hoy', value: '18' },
           ]}
           style={{
             '--cui-card-cap-bg': '#00aced',
@@ -108,7 +107,8 @@ const WidgetsBrand = ({ withCharts }) => {
         />
       </CCol>
 
-      <CCol sm={6} lg={3}>
+      <CCol sm={6} lg={6}>
+        
         <CWidgetStatsD
           className="mb-4"
           {...(withCharts && {
@@ -117,14 +117,14 @@ const WidgetsBrand = ({ withCharts }) => {
                 className="position-absolute w-100 h-100"
                 type="line"
                 data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                  labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
                   datasets: [
                     {
                       backgroundColor: 'rgba(255,255,255,.1)',
                       borderColor: 'rgba(255,255,255,.55)',
                       pointHoverBackgroundColor: '#fff',
                       borderWidth: 2,
-                      data: [78, 81, 80, 45, 34, 12, 40],
+                      data: [2, 6, 8, 12, 12, 6, 4],
                       fill: true,
                     },
                   ],
@@ -133,18 +133,16 @@ const WidgetsBrand = ({ withCharts }) => {
               />
             ),
           })}
-          icon={<CIcon icon={cibLinkedin} height={52} className="my-4 text-white" />}
+          icon={<CIcon icon={cilUser} height={52} className="my-4 text-white" />}
           values={[
-            { title: 'contacts', value: '500' },
-            { title: 'feeds', value: '1.292' },
+            { title: 'Usuarios en cubículo actualmente', value: '4' },
           ]}
           style={{
             '--cui-card-cap-bg': '#4875b4',
           }}
         />
       </CCol>
-
-      <CCol sm={6} lg={3}>
+      {/* <CCol sm={6} lg={3}>
         <CWidgetStatsD
           className="mb-4"
           color="warning"
@@ -176,7 +174,7 @@ const WidgetsBrand = ({ withCharts }) => {
             { title: 'meetings', value: '4' },
           ]}
         />
-      </CCol>
+      </CCol> */}
     </CRow>
   )
 }
