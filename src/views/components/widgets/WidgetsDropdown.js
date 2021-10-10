@@ -77,7 +77,7 @@ const WidgetsDropdown = () => {
                     },
                   },
                   y: {
-                    min: 100,
+                    min: 0,
                     max: 250,
                     display: false,
                     grid: {
@@ -164,7 +164,7 @@ const WidgetsDropdown = () => {
                     },
                   },
                   y: {
-                    min: 100,
+                    min: 0,
                     max: 250,
                     display: false,
                     grid: {
