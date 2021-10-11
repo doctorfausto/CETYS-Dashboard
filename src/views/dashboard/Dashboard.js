@@ -64,77 +64,114 @@ const Dashboard = () => {
       <WidgetsDropdown />
       <CCard className="mb-4">
         <CCardBody>
-          <CRow>
-            <CCol sm={5}>
+          <CRow xs={{ cols: 1 }} md={{ cols: 4 }} className="text-center">
+            <CCol sm={3}>
               <h4 id="traffic" className="card-title mb-0">
-                Traffic
+                Uso de cubículos
               </h4>
-              <div className="small text-medium-emphasis">January - July 2021</div>
+              {/* TODO: update a la fecha por API call */}
+              <div className="small text-medium-emphasis">11 oct - 17 oct</div>
             </CCol>
-            <CCol sm={7} className="d-none d-md-block">
+            <CCol sm= {5} className="d-none d-md-block">
+              <CButtonGroup className="me-2" role="group" aria-label="First group">
+                {/* TODO: funcionalidad en los botones  */}
+                <CButton color="primary">Lu.</CButton>
+                <CButton color="primary">Ma.</CButton>
+                <CButton color="primary">Mi.</CButton>
+                <CButton color="primary">Ju.</CButton>
+                <CButton color="primary">Vi.</CButton>
+                <CButton color="primary">Sa.</CButton>
+                <CButton color="primary">Semana</CButton>
+              </CButtonGroup>
+            </CCol>
+            <CCol sm={2} className="d-none d-md-block">
+              <CButtonGroup className="me-2" role="group" aria-label="Second group">
+                {/* TODO: funcionalidad en los botones  */}
+                <CButton color="secondary">ING</CButton>
+                <CButton color="secondary">CSH</CButton>
+                <CButton color="secondary">ADM</CButton>
+                <CButton color="secondary">PREP</CButton>
+              </CButtonGroup>
+            </CCol>
+            <CCol sm={2} className="d-none d-md-block">
               <CButton color="primary" className="float-end">
+                {/* TODO: funcionalidad de boton de descarga de datos a un .xslx  */}
                 <CIcon icon={cilCloudDownload} />
               </CButton>
-              <CButtonGroup className="float-end me-3">
-                {['Day', 'Month', 'Year'].map((value) => (
-                  <CButton
-                    color="outline-secondary"
-                    key={value}
-                    className="mx-0"
-                    active={value === 'Month'}
-                  >
-                    {value}
-                  </CButton>
-                ))}
-              </CButtonGroup>
             </CCol>
           </CRow>
           <CChartLine
             style={{ height: '300px', marginTop: '40px' }}
             data={{
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
               datasets: [
                 {
-                  label: 'My First dataset',
-                  backgroundColor: hexToRgba(getStyle('--cui-info'), 10),
-                  borderColor: getStyle('--cui-info'),
-                  pointHoverBackgroundColor: getStyle('--cui-info'),
+                  label: 'Ingeniería',
+                  backgroundColor: 'transparent',
+                  borderColor: getStyle('--cui-primary'),
+                  pointHoverBackgroundColor: getStyle('--cui-primary'),
                   borderWidth: 2,
                   data: [
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
+                    //TODO: API call para datos del dia
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
                   ],
                   fill: true,
                 },
                 {
-                  label: 'My Second dataset',
+                  label: 'Ciencias Sociales y Humanidades',
                   backgroundColor: 'transparent',
-                  borderColor: getStyle('--cui-success'),
-                  pointHoverBackgroundColor: getStyle('--cui-success'),
+                  borderColor: getStyle('--cui-info'),
+                  pointHoverBackgroundColor: getStyle('--cui-info'),
                   borderWidth: 2,
                   data: [
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
-                    random(50, 200),
+                    //TODO: API call para datos de ayer
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
                   ],
                 },
                 {
-                  label: 'My Third dataset',
+                  label: 'Administracion',
+                  backgroundColor: 'transparent',
+                  borderColor: getStyle('--cui-warning'),
+                  pointHoverBackgroundColor: getStyle('--cui-warning'),
+                  borderWidth: 2,
+
+                  data: [
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                  ],
+                },
+                {
+                  label: 'Preparatoria',
                   backgroundColor: 'transparent',
                   borderColor: getStyle('--cui-danger'),
                   pointHoverBackgroundColor: getStyle('--cui-danger'),
-                  borderWidth: 1,
-                  borderDash: [8, 5],
-                  data: [65, 65, 65, 65, 65, 65, 65],
+                  borderWidth: 2,
+                  data: [
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                    random(0, 6),
+                  ],
                 },
               ],
             }}
@@ -155,8 +192,8 @@ const Dashboard = () => {
                   ticks: {
                     beginAtZero: true,
                     maxTicksLimit: 5,
-                    stepSize: Math.ceil(250 / 5),
-                    max: 250,
+                    stepSize: 1,
+                    max: 12,
                   },
                 },
               },
@@ -175,32 +212,32 @@ const Dashboard = () => {
           />
         </CCardBody>
         <CCardFooter>
-          <CRow xs={{ cols: 1 }} md={{ cols: 5 }} className="text-center">
+          <CRow xs={{ cols: 1 }} md={{ cols: 4 }} className="text-center">
             <CCol className="mb-sm-2 mb-0">
-              <div className="text-medium-emphasis">Visits</div>
-              <strong>29.703 Users (40%)</strong>
-              <CProgress thin className="mt-2" precision={1} color="success" value={40} />
+              <div className="text-medium-emphasis">Ingeniería</div>
+              <strong>Usuarios promedio (26%)</strong>
+              <CProgress thin className="mt-2" precision={1} value={26} />
             </CCol>
             <CCol className="mb-sm-2 mb-0">
-              <div className="text-medium-emphasis">Unique</div>
-              <strong>24.093 Users (20%)</strong>
-              <CProgress thin className="mt-2" precision={1} color="info" value={40} />
+              <div className="text-medium-emphasis">Ciencias Sociales y Humanidades</div>
+              <strong>Usuarios promedio (28%)</strong>
+              <CProgress thin className="mt-2" precision={1} color="info" value={28} />
             </CCol>
             <CCol className="mb-sm-2 mb-0">
-              <div className="text-medium-emphasis">Pageviews</div>
-              <strong>78.706 Views (60%)</strong>
-              <CProgress thin className="mt-2" precision={1} color="warning" value={40} />
+              <div className="text-medium-emphasis">Administración</div>
+              <strong>Usuarios promedio (12%)</strong>
+              <CProgress thin className="mt-2" precision={1} color="warning" value={12} />
             </CCol>
             <CCol className="mb-sm-2 mb-0">
-              <div className="text-medium-emphasis">New Users</div>
-              <strong>22.123 Users (80%)</strong>
-              <CProgress thin className="mt-2" precision={1} color="danger" value={40} />
+              <div className="text-medium-emphasis">Preparatoria</div>
+              <strong>Usuarios promedio (34%)</strong>
+              <CProgress thin className="mt-2" precision={1} color="danger" value={34} />
             </CCol>
-            <CCol className="mb-sm-2 mb-0">
+            {/* <CCol className="mb-sm-2 mb-0">
               <div className="text-medium-emphasis">Bounce Rate</div>
               <strong>Average Rate (40.15%)</strong>
               <CProgress thin className="mt-2" precision={1} value={40} />
-            </CCol>
+            </CCol> */}
           </CRow>
         </CCardFooter>
       </CCard>
