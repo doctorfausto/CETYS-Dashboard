@@ -51,6 +51,7 @@ import avatar4 from './../../assets/images/avatars/4.jpg'
 import avatar5 from './../../assets/images/avatars/5.jpg'
 import avatar6 from './../../assets/images/avatars/6.jpg'
 import Trafico from '../components/charts/Trafico.js'
+import Histograma from '../components/charts/Histograma'
 const WidgetsDropdown = lazy(() => import('../components/widgets/WidgetsDropdown.js'))
 const WidgetsBrand = lazy(() => import('../components/widgets/WidgetsBrand.js'))
 
@@ -63,7 +64,7 @@ const Dashboard = () => {
     <>
       <WidgetsDropdown />
       <Trafico />
-
+      <Histograma />
       <WidgetsBrand withCharts />
 
       <CRow>
