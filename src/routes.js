@@ -53,9 +53,14 @@ const Toasts = React.lazy(() => import('./views/components/notifications/toasts/
 
 const Widgets = React.lazy(() => import('./views/components/widgets/Widgets'))
 
+// Library
+const Cubicles = React.lazy(() => import('./views/library/Cubicles'));
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/library', name: 'Library', component: Cubicles, exact: true },
+  { path: '/library/cubicles', name: 'Cubicles', component: Cubicles },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
