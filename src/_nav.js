@@ -9,6 +9,7 @@ import {
   cilNotes,
   cilPencil,
   cilPuzzle,
+  cilRoom,
   cilSpeedometer,
   cilStar,
   cilClock,
@@ -27,6 +28,12 @@ const _nav = [
     name: 'Cubículos',
     to: '/theme/typography',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Cubículos',
+    to: '/library/cubicles',
+    icon: <CIcon icon={cilRoom} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,
