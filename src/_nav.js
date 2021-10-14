@@ -3,7 +3,6 @@ import CIcon from '@coreui/icons-react'
 import {
   cilCalendar,
   cilRoom,
-  cilSpeedometer,
   cilClock,
   cilBank,
   cilClipboard,
