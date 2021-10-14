@@ -1,17 +1,8 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
-  cilCursor,
-  cilDrop,
-  cilNotes,
-  cilPencil,
-  cilPuzzle,
+  cilCalendar,
   cilRoom,
-  cilSpeedometer,
-  cilStar,
   cilClock,
   cilBank,
   cilClipboard,
@@ -25,9 +16,9 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 const _nav = [
   {
     component: CNavItem,
-    name: 'Cubículos',
+    name: 'Calendario',
     to: '/theme/typography',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
