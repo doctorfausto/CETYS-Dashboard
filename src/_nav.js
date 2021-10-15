@@ -26,10 +26,10 @@ const _nav = [
     to: '/library/cubicles',
     icon: <CIcon icon={cilRoom} customClassName="nav-icon" />,
   },
-  {
-    component: CNavTitle,
-    name: 'Historial y Estadísticas',
-  },
+//   {
+//     component: CNavTitle,
+//     name: 'Historial y Estadísticas',
+//   },
   {
     component: CNavItem,
     name: 'Historial',
@@ -69,17 +69,17 @@ const _nav = [
     name: 'Preparatoria',
     to: '/charts',
     icon: <CIcon icon={cilHouse} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavTitle,
-    name: 'Encuesta',
-  },
-  {
-    component: CNavItem,
-    name: 'Resultados',
-    to: '/icons',
-    icon: <CIcon icon={cilClipboard} customClassName="nav-icon" />,
-  },
+  }
+//   {
+//     component: CNavTitle,
+//     name: 'Encuesta',
+//   },
+//   {
+//     component: CNavItem,
+//     name: 'Resultados',
+//     to: '/icons',
+//     icon: <CIcon icon={cilClipboard} customClassName="nav-icon" />,
+//   },
 //   {
 //     component: CNavGroup,
 //     name: 'Ingeniería',
