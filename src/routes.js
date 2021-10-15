@@ -1,5 +1,6 @@
 import React from 'react'
 
+const Historial = React.lazy(() => import('./views/historial/Historial'))
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -58,6 +59,7 @@ const Cubicles = React.lazy(() => import('./views/library/Cubicles'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  { path: '/historial', name: 'Historial', component: Historial },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/library', name: 'Library', component: Cubicles, exact: true },
   { path: '/library/cubicles', name: 'Cubicles', component: Cubicles },
