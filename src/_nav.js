@@ -33,7 +33,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Historial',
-    to: '/theme/colors',
+    to: '/historial',
     icon: <CIcon icon={cilClock} customClassName="nav-icon" />,
   },
   {
