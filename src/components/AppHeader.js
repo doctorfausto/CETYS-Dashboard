@@ -41,10 +41,10 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
+            <CNavLink href="https://koha.cetys.mx/">Koha</CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
+            <CNavLink href="http://koha.cetys.mx/cgi-bin/koha/pages.pl?p=bases">Catalogo</CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav>
