@@ -12,11 +12,10 @@ import {
   cilUser
 } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
-import { Link } from 'react-router-dom'
-import { rgbToHex } from '@coreui/utils'
-import { DocsLink } from 'src/components'
+import 'src/css/status.css'
 import 'src/scss/status.scss'
-import Select from 'react-select'
+import Select, { StylesConfig } from 'react-select'
+import { defaults } from 'chart.js'
 //import StatusCubicle from './CubicleStatus'
 
 // const CubicleView = () => {
@@ -63,7 +62,7 @@ import Select from 'react-select'
 
 const CubicleView = () => {
   return (
-    <div class="card" style={{width: '75%'}}>
+    <div class="card" style={{width: '100%'}}>
       {/* <ul class="list-group list-group-flush">
         <li class="status available list-group-item">Disponible</li>
       </ul> */}
@@ -83,44 +82,80 @@ const CubicleView = () => {
 const CubicleRoom = ({children}) => {
   var statusColors = [
     {
-        value: 1,
-        label: "bg-success"
+        id: 1,
+        value: "bg-success",
+        label: "Disponible",
     },
     {
-        value: 2,
-        label: "bg-primary"
+        id: 2,
+        value: "bg-primary",
+        label: "Reservado"
     },
     {
-        value: 3,
-        label: "bg-danger"
+        id: 3,
+        value: "bg-danger",
+        label: "Ocupado"
     }
   ]
 
-  var [setStatusCubicle, optValue] = useState(statusColors.label)
-  var optHandle = e =>
+  var [setStatusCubicle, optValue] = useState(statusColors.value)
+  var [defaultStatusCubicle, defaultOptValue] = useState(statusColors[0])
+
+  var optHandle = opt =>
   {
-    if (optValue(e.label) == statusColors[2])
+    optValue(opt.value)
+  }
+
+  var select = document.getElementsByClassName(" css-qc6sy-singleValue")
+  var label = [].map.call(select, item => item.textContent)
+  
+  var setColor = () => {
+    for (let i = 0; i < label.length; i++)
     {
-      return(
-        <div class="list-group-item">
-          hola
-        </div>
-      )
-    } else {
-      optValue(e.label)
+      if (label[i] == defaultStatusCubicle.label)
+      {
+        setColor = defaultStatusCubicle.value
+        return setColor
+      } else {
+        setColor = setStatusCubicle
+        return setColor
+      }
     }
   }
 
-  const classes = classNames(setStatusCubicle, 'card-img-top w-75 rounded mb-3')
+  // var setColor = () => {
+  //   if (setStatusCubicle == defaultStatusCubicle.label)
+  //   {
+  //     setColor = defaultStatusCubicle
+  //     return setColor
+  //   } else {
+  //     setColor = setStatusCubicle
+  //     return setColor
+  //   }
+  // }
+  // if (setStatusCubicle == defaultStatusCubicle)
+  // {
+  //   console.log("TRUE")
+  //   console.log(setStatusCubicle)
+  //   console.log(defaultStatusCubicle)
+  //   setColor = defaultStatusCubicle
+  // } else {
+  //   console.log("FALSE")
+  //   setColor = setStatusCubicle
+  // }
+
+  const classes = classNames(setColor(), 'card-img-top w-75 rounded mb-3 mx-auto') 
   return (
-    <CCol xl="2" md="4" sm="6" xs="12" className="mb-4">
+    <CCol xl="3" md="5" sm="7" xs="13" className="mb-4">
       <div className={classes} style={{paddingTop: '75%'}}></div>
       {children}
       <Select
-        options={statusColors} 
-        onChange={optHandle} 
-        className="w-75 mb-3" 
-        placeholder="Selecciona el estado del cubículo"
+        id="statusCubicle"
+        options={statusColors}
+        defaultValue={statusColors[0]}
+        onChange={optHandle}
+        className="w-100 mb-3" 
+        placeholder="Estado"
       />
       <CubicleView/>
     </CCol>
@@ -138,49 +173,49 @@ const Cubicles = () => {
         <CCardBody>
           <CRow>
             <CubicleRoom>
-              <h6>Cubículo 1</h6>
+              <h6 align="center">Cubículo 1</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 2</h6>
+              <h6 align="center">Cubículo 2</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 3</h6>
+              <h6 align="center">Cubículo 3</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 4</h6>
+              <h6 align="center">Cubículo 4</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 5</h6>
+              <h6 align="center">Cubículo 5</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 6</h6>
+              <h6 align="center">Cubículo 6</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 7</h6>
+              <h6 align="center">Cubículo 7</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 8</h6>
+              <h6 align="center">Cubículo 8</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 9</h6>
+              <h6 align="center">Cubículo 9</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 10</h6>
+              <h6 align="center">Cubículo 10</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 11</h6>
+              <h6 align="center">Cubículo 11</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 12</h6>
+              <h6 align="center">Cubículo 12</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 13</h6>
+              <h6 align="center">Cubículo 13</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Cubículo 14</h6>
+              <h6 align="center">Cubículo 14</h6>
             </CubicleRoom>
             <CubicleRoom>
-              <h6>Sala de video</h6>
+              <h6 align="center">Sala de video</h6>
             </CubicleRoom>
           </CRow>
         </CCardBody>
