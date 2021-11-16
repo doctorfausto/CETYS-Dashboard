@@ -12,60 +12,12 @@ import {
   cilUser
 } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
-import 'src/css/status.css'
 import 'src/scss/status.scss'
 import Select, { StylesConfig } from 'react-select'
-import { defaults } from 'chart.js'
-//import StatusCubicle from './CubicleStatus'
-
-// const CubicleView = () => {
-//   return (
-//     <div class="card">
-//       <table className="table w-100">
-//         <tbody>
-//         <tr>
-//           <td>
-//             <ul>
-//               <li class="status available">Disponible</li>
-//               <li class="status reserved">Reservado</li>
-//               <li class="status occupied">Ocupado</li>
-//             </ul>
-//           </td>
-//         </tr>
-//         <tr>
-//           <td>
-//             <CIcon icon={cilUser}/> 2 - 4
-//           </td>
-//         </tr>
-//         <tr>
-//           <td>Tiempo límite: 0 - 2 horas</td>
-//         </tr>
-//         <tr>
-//           <td>Tiempo restante: 02:00:00</td>
-//         </tr>
-//         </tbody>
-//       </table>
-//     </div>
-//   )
-// }
-
-// const CubicleRoom = ({className, children}) => {
-//   const classes = classNames(className, 'theme-color w-75 rounded mb-3')
-//   return (
-//     <CCol xl="2" md="4" sm="6" xs="12" className="mb-4">
-//       <div className={classes} style={{paddingTop: '75%'}}></div>
-//       {children}
-//       <CubicleView/>
-//     </CCol>
-//   )
-// }
 
 const CubicleView = () => {
   return (
     <div class="card" style={{width: '100%'}}>
-      {/* <ul class="list-group list-group-flush">
-        <li class="status available list-group-item">Disponible</li>
-      </ul> */}
       <div class="card-body">
         <CIcon icon={cilUser}/> 2 - 4
       </div>
@@ -107,13 +59,15 @@ const CubicleRoom = ({children}) => {
   }
 
   var select = document.getElementsByClassName(" css-qc6sy-singleValue")
-  var label = [].map.call(select, item => item.textContent)
-  
+  var availableLabel = [].map.call(select, item => item.textContent)
+
   var setColor = () => {
-    for (let i = 0; i < label.length; i++)
+    for (let i = 0; i < availableLabel.length; i++)
     {
-      if (label[i] == defaultStatusCubicle.label)
+      console.log(availableLabel[i])
+      if (availableLabel[i] == defaultStatusCubicle.label)
       {
+        console.log("TRUE")
         setColor = defaultStatusCubicle.value
         return setColor
       } else {
@@ -124,24 +78,18 @@ const CubicleRoom = ({children}) => {
   }
 
   // var setColor = () => {
-  //   if (setStatusCubicle == defaultStatusCubicle.label)
+  //   if (setStatusCubicle == defaultStatusCubicle)
   //   {
+  //     console.log("TRUE")
+  //     console.log(setStatusCubicle)
+  //     console.log(defaultStatusCubicle)
   //     setColor = defaultStatusCubicle
   //     return setColor
   //   } else {
+  //     console.log("FALSE")
   //     setColor = setStatusCubicle
   //     return setColor
   //   }
-  // }
-  // if (setStatusCubicle == defaultStatusCubicle)
-  // {
-  //   console.log("TRUE")
-  //   console.log(setStatusCubicle)
-  //   console.log(defaultStatusCubicle)
-  //   setColor = defaultStatusCubicle
-  // } else {
-  //   console.log("FALSE")
-  //   setColor = setStatusCubicle
   // }
 
   const classes = classNames(setColor(), 'card-img-top w-75 rounded mb-3 mx-auto') 
