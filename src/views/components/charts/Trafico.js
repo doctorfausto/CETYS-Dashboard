@@ -108,7 +108,6 @@ const Trafico = () => {
         }
     }
 
-
     return (
         <CCard className="mb-4">
         <CCardBody>
@@ -142,10 +141,6 @@ const Trafico = () => {
               </CButtonGroup>
             </CCol>
             <CCol sm={2} className="d-none d-md-block">
-              <CButton color="primary" className="float-end">
-                {/* TODO: funcionalidad de boton de descarga de datos a un .xslx  */}
-                <CIcon icon={cilCloudDownload} />
-              </CButton>
             </CCol>
           </CRow>
           <CChartLine

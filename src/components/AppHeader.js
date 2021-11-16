@@ -12,11 +12,23 @@ import {
   CNavItem,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from '@coreui/icons'
+import { cilCloudDownload, cilEnvelopeOpen, cilList, cilMenu } from '@coreui/icons'
 
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 import { logo } from 'src/assets/brand/logo'
+
+import { CSVLink, CSVDownload } from "react-csv"
+
+
+//csvData debe venir del mismo lado que los datos que recibe Trafico.js para la tabla principal
+const csvData = [
+  ["ESCUELA", "Total", "Data", "Promedio", "Porcentaje"],
+  ["Ingenieria", 0, "", "", ""],
+  ["Ciencias S H", 0, "", "", ""],
+  ["Administración", 0, "", "", ""],
+  ["Preparatoria", 0, "", "", ""]
+]
 
 const AppHeader = () => {
   const dispatch = useDispatch()
@@ -50,17 +62,9 @@ const AppHeader = () => {
         <CHeaderNav>
           <CNavItem>
             <CNavLink href="#">
-              <CIcon icon={cilBell} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
+              <CSVLink data={csvData}>
+                <CIcon icon={cilCloudDownload} height={28} size="lg"/>
+              </CSVLink>
             </CNavLink>
           </CNavItem>
         </CHeaderNav>
