@@ -28,7 +28,7 @@ const Charts = () => {
                 datasets: [
                   {
                     label: 'Accesos a cubículos',
-                    backgroundColor: '#f87979',
+                    backgroundColor: '#F72813',
                     data: [random(), random(), random(), random(), random(), random(), random()],
                   },
                 ],
