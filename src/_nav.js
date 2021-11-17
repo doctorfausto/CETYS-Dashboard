@@ -17,13 +17,13 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Calendario',
-    to: '/theme/typography',
+    to: '/calendario',
     icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Cubículos',
-    to: '/library/cubicles',
+    to: '/cubiculos',
     icon: <CIcon icon={cilRoom} customClassName="nav-icon" />,
   },
 //   {
@@ -49,25 +49,25 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Ingeniería',
-    to: '/base',
+    to: '/ingenieria',
     icon: <CIcon icon={cilCode} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Humanidades',
-    to: '/buttons',
+    to: '/humanidades',
     icon: <CIcon icon={cilPeople} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Administración',
-    to: '/forms',
+    to: '/administracion',
     icon: <CIcon icon={cilBank} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Preparatoria',
-    to: '/charts',
+    to: '/preparatoria',
     icon: <CIcon icon={cilHouse} customClassName="nav-icon" />,
   }
 //   {
